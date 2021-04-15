@@ -1,0 +1,33 @@
+{
+  "name": "bank-typescript",
+  "version": "1.0.0",
+  "description": "## Getting started",
+  "main": "bank.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.16",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.14.37",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "coverage": "nyc npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beca-g/bank-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beca-g/bank-typescript/issues"
+  },
+  "homepage": "https://github.com/beca-g/bank-typescript#readme"
+}
