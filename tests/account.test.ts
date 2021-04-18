@@ -15,9 +15,17 @@ describe("Account", () => {
   })
 
   describe("deposit", () => {
-    it("should increase the account balance by 1000", () => {
+    it("should increase the account balance", () => {
       account.deposit(1000)
       expect(account.balance()).to.equal(1000)
+    })
+  })
+
+  describe("withdraw", () => {
+    it("should decrease the account balance", () => {
+      account.deposit(1000)
+      account.withdraw(500)
+      expect(account.balance()).to.equal(500)
     })
   })
 })
