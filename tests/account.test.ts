@@ -13,4 +13,11 @@ describe("Account", () => {
       expect(account.balance()).to.equal(0)
     })
   })
+
+  describe("deposit", () => {
+    it("should increase the account balance by 1000", () => {
+      account.deposit(1000)
+      expect(account.balance()).to.equal(1000)
+    })
+  })
 })
