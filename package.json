@@ -1,8 +1,8 @@
 {
-  "name": "bank-typescript",
+  "name": "fizzbuzz-typescript",
   "version": "1.0.0",
-  "description": "## Getting started",
-  "main": "bank.ts",
+  "description": "",
+  "main": "fizzbuzz.ts",
   "directories": {
     "test": "tests"
   },
