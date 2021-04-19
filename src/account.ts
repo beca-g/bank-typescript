@@ -1,8 +1,10 @@
 export class Account {
   currentBalance: number;
+  transactions: string[];
   
   constructor() {
     this.currentBalance = 0
+    this.transactions = []
   }
 
   balance(): number {
