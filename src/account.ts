@@ -1,6 +1,8 @@
+import { Transaction } from "../src/transaction";
+
 export class Account {
   currentBalance: number;
-  transactions: string[];
+  transactions: (string | number)[];
   
   constructor() {
     this.currentBalance = 0
@@ -12,7 +14,8 @@ export class Account {
   }
 
   deposit(amount: number) {
-    
+    let transaction: any = new Transaction("credit", amount)
+    this.transactions.push(transaction)
     this.currentBalance += amount
   }
 

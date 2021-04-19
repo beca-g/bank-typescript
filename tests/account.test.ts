@@ -4,8 +4,12 @@ import { expect } from "chai"
 describe("Account", () => {
   let account: Account;
   
-  beforeEach(function() {
+  beforeEach(() => {
     account = new Account()
+  })
+
+  afterEach(() => {
+
   })
 
   describe("when initialized", () => {
@@ -24,6 +28,11 @@ describe("Account", () => {
     it("should increase the account balance", () => {
       account.deposit(1000)
       expect(account.balance()).to.equal(1000)
+    })
+
+    it("should add a transaction to the transactions array", () => {
+      account.deposit(1000)
+      expect(account.transactions.length).to.equal(1)
     })
   })
 
