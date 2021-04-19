@@ -42,5 +42,10 @@ describe("Account", () => {
       account.withdraw(500)
       expect(account.balance()).to.equal(500)
     })
+
+    it("should add a transaction to the transactions array", () => {
+      account.withdraw(500)
+      expect(account.transactions.length).to.equal(1)
+    })
   })
 })

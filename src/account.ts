@@ -20,6 +20,8 @@ export class Account {
   }
 
   withdraw(amount: number) {
+    let transaction: any = new Transaction("debit", amount)
+    this.transactions.push(transaction)
     this.currentBalance -= amount
   }
 }
