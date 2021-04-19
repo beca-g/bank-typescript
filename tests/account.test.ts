@@ -34,6 +34,4 @@ describe("Account", () => {
       expect(account.balance()).to.equal(500)
     })
   })
-
-
 })
