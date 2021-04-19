@@ -14,14 +14,17 @@ export class Account {
   }
 
   deposit(amount: number) {
-    let transaction: any = new Transaction("credit", amount)
-    this.transactions.push(transaction)
+    this.transaction("credit", amount)
     this.currentBalance += amount
   }
 
   withdraw(amount: number) {
-    let transaction: any = new Transaction("debit", amount)
-    this.transactions.push(transaction)
+    this.transaction("debit", amount)
     this.currentBalance -= amount
+  }
+
+  transaction(type: string, amount: number) {
+    let transaction: any = new Transaction(type, amount)
+    this.transactions.push(transaction)
   }
 }
