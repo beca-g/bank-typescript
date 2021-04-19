@@ -16,7 +16,7 @@ npm install
 
 ### To run tests
 ```
-npm run test
+npm run coverage
 ```
 
 ## Specification
