@@ -21,6 +21,6 @@ describe("Transaction", () => {
   })
 
   it("should store the date of the transaction", () => {
-    expect(transaction.getDate()).to.equal("19/04/2021")
+    expect(transaction.date).to.equal("19/04/2021")
   })
 })

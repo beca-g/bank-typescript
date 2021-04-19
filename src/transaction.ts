@@ -1,15 +1,16 @@
 export class Transaction {
   type: string;
   amount: number;
-  date: number;
+  date: string;
 
   constructor(type: string, amount: number) {
     this.type = type;
     this.amount = amount;
-    this.date = Date.now();
+    this.date = this.getDate();
   }
 
   getDate() {
-    return new Date(this.date).toLocaleString().split(',')[0];
+    let date = Date.now();
+    return new Date(date).toLocaleString().split(',')[0];
   }
 }
