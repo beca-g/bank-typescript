@@ -2,7 +2,7 @@
   "name": "bank-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "fizzbuzz.ts",
+  "main": "account.ts",
   "directories": {
     "test": "tests"
   },
@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",

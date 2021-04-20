@@ -19,6 +19,7 @@ export class Account {
   }
 
   withdraw(amount: number) {
+    if(this.currentBalance - amount < amount) { throw "Insufficient funds"; }
     this.transaction("debit", amount)
     this.currentBalance -= amount
   }

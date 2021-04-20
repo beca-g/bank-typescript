@@ -8,10 +8,6 @@ describe("Account", () => {
     account = new Account()
   })
 
-  afterEach(() => {
-
-  })
-
   describe("when initialized", () => {
     it("should be initialized with no transaction history", () => {
       expect(account.transactions.length).to.equal(0)
@@ -43,9 +39,8 @@ describe("Account", () => {
       expect(account.balance()).to.equal(500)
     })
 
-    it("should add a transaction to the transactions array", () => {
-      account.withdraw(500)
-      expect(account.transactions.length).to.equal(1)
+    it("should throw an error if the account has insufficient funds", () => {
+      expect(() => account.withdraw(500)).to.throw("Insufficient funds")
     })
   })
 })
