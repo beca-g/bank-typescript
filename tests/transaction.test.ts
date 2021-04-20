@@ -5,22 +5,24 @@ import { expect } from "chai";
 
 describe("Transaction", () => {
   let transaction: Transaction
+  let date = Date.now();
+  let today: string;
   
   beforeEach(function() {
     transaction = new Transaction("credit", 1000)
-    const date = 1618834297723
+    today = new Date(date).toLocaleString().split(',')[0];
   })
-
-
+  
+  
   it("should store the transaction type", () => {
     expect(transaction.type).to.equal("credit")
   })
-
+  
   it("should store the amount", () => {
     expect(transaction.amount).to.equal(1000)
   })
-
+  
   it("should store the date of the transaction", () => {
-    expect(transaction.date).to.equal("19/04/2021")
+    expect(transaction.date).to.equal(today)
   })
 })
