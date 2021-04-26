@@ -1,6 +1,7 @@
 export class Statement {
 
-  printHeadings() {
-    return "date || credit || debit || balance";
+  getHeadings() {
+    const statementHeadings: string = "date || credit || debit || balance";
+    return statementHeadings
   }
 }

@@ -10,9 +10,9 @@ describe("Statement", () => {
     statement = new Statement()
   })
 
-  describe("printHeader", () => {
-    it("should print the statement headings", () => {
-      expect(statement.printHeadings()).to.equal("date || credit || debit || balance")
+  describe("getHeader", () => {
+    it("should return the statement headings", () => {
+      expect(statement.getHeadings()).to.equal("date || credit || debit || balance")
     })
   })
 })
