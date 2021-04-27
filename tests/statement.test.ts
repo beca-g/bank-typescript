@@ -10,15 +10,23 @@ describe("Statement", () => {
     statement = new Statement(account)
   })
 
-  describe("constructor", () => {
+  describe("#constructor", () => {
     it("should be initialized with an account", () => {
       expect(statement.account).to.equal(account)
     })
   })
 
-  describe("getHeader", () => {
+  describe("#getHeader", () => {
     it("should return the statement headings", () => {
       expect(statement.getHeadings()).to.equal("date || credit || debit || balance")
+    })
+  })
+
+  describe("#print", () => {
+    context("when no transactions have been made", () => {
+      it("should return the headings only", () => {
+        expect(statement.print()).to.equal("date || credit || debit || balance")
+      })
     })
   })
 })

@@ -8,6 +8,10 @@ export class Statement {
     this.account = account;
   }
 
+  print() {
+    return this.getHeadings();  
+  }
+
   getHeadings() {
     const statementHeadings: string = "date || credit || debit || balance";
     return statementHeadings
