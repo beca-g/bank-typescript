@@ -2,7 +2,6 @@ import { Account } from './account';
 
 export class Statement {
   account: Account;
-  transactions: any;
 
   constructor(account: Account) {
     this.account = account;
