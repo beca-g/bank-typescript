@@ -1,13 +1,19 @@
 import { Statement } from "../src/statement"
 import { Account } from '../src/account';
 import { expect } from "chai"
-import sinon = require("sinon")
 
 describe("Statement", () => {
   let statement: Statement;
+  let account: Account;
 
   beforeEach(() => {
-    statement = new Statement()
+    statement = new Statement(account)
+  })
+
+  describe("constructor", () => {
+    it("should be initialized with an account", () => {
+      expect(statement.account).to.equal(account)
+    })
   })
 
   describe("getHeader", () => {
