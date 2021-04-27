@@ -1,4 +1,4 @@
-import { Transaction } from "../src/transaction";
+import { Transaction } from "./transaction";
 
 export class Account {
   currentBalance: number;
@@ -15,13 +15,13 @@ export class Account {
 
   deposit(amount: number) {
     this.transaction("credit", amount)
-    this.currentBalance += amount
+    return this.currentBalance += amount
   }
 
   withdraw(amount: number) {
     if(this.currentBalance - amount < amount) { throw "Insufficient funds"; }
     this.transaction("debit", amount)
-    this.currentBalance -= amount
+    return this.currentBalance -= amount
   }
 
   transaction(type: string, amount: number) {
