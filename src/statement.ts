@@ -1,18 +1,24 @@
-import { Account } from './account';
+import { TransactionType } from "./transaction";
+
+interface Account {
+  transactionList: TransactionType;
+  currentBalance: number;
+}
 
 export class Statement {
   account: Account;
 
   constructor(account: Account) {
     this.account = account;
+    console.log(this.account);
   }
 
-  print() {
-    return this.getHeadings();  
+  print(): string {
+    return this.getHeadings();
   }
 
-  getHeadings() {
-    const statementHeadings: string = "date || credit || debit || balance";
-    return statementHeadings
+  getHeadings(): string {
+    const statementHeadings = "date || credit || debit || balance";
+    return statementHeadings;
   }
 }
