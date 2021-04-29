@@ -1,31 +1,31 @@
-import { Transaction } from "./transaction";
+import { Transaction, TransactionType } from "./transaction";
 
 export class Account {
   currentBalance: number;
-  transactions: (string | number)[];
+  transactionList: TransactionType[];
   
   constructor() {
-    this.currentBalance = 0
-    this.transactions = []
+    this.currentBalance = 0;
+    this.transactionList = [];
   }
 
   balance(): number {
-    return this.currentBalance
+    return this.currentBalance;
   }
 
-  deposit(amount: number) {
-    this.transaction("credit", amount)
-    return this.currentBalance += amount
+  deposit(amount: number): number{
+    this.transaction("credit", amount);
+    return this.currentBalance += amount;
   }
 
-  withdraw(amount: number) {
+  withdraw(amount: number): number {
     if(this.currentBalance - amount < amount) { throw "Insufficient funds"; }
-    this.transaction("debit", amount)
-    return this.currentBalance -= amount
+    this.transaction("debit", amount);
+    return this.currentBalance -= amount;
   }
 
-  transaction(type: string, amount: number) {
-    let transaction: any = new Transaction(type, amount)
-    this.transactions.push(transaction)
+  transaction(type: string, amount: number): number {
+    const transaction: TransactionType = new Transaction(type, amount);
+    return this.transactionList.push(transaction);
   }
 }

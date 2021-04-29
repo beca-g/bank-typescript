@@ -1,3 +1,8 @@
+export interface TransactionType {
+  type: string;
+  amount: number;
+}
+
 export class Transaction {
   type: string;
   amount: number;
@@ -9,8 +14,8 @@ export class Transaction {
     this.date = this.getDate();
   }
 
-  getDate() {
-    let date = Date.now();
-    return new Date(date).toLocaleString().split(',')[0];
+  getDate(): string {
+    const date = Date.now();
+    return new Date(date).toLocaleString().split(",")[0];
   }
 }
